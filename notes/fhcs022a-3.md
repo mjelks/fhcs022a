@@ -11,7 +11,8 @@
 ### 5.2 Creating JS Objects
 ```javascript
   var hisCar = {make: 'Honda', model: 'Civic'};
-  
+```
+
 ### 5.3 Dot vs Square Bracket Notation
 - When we use the dot notation, propertyName has to be a valid identifier.
 - square bracket notation allows for dynamic keys
