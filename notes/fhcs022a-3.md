@@ -34,6 +34,7 @@ examples:
 - methods are functions that are attached to objects through a property (in JS)
 - When a method is invoked on an object, it has access to the object through the keyword this.
   - invocation context (this is passed implicitly)
+
 ```javascript
 function depositAmount(amount) {
 
@@ -61,7 +62,9 @@ Object { name="Alice", balance=0, deposit=depositAmount()}
 Object { name="Alice", balance=20, deposit=depositAmount()}
 Object { name="Alice", balance=70, deposit=depositAmount()}
 ```
-this is also valid:
+
+**this is also valid:**
+
 ```javascript
   account =  {
   name: 'Alice',
