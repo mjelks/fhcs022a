@@ -87,4 +87,55 @@ myNumbers.sort(function (a, b) {
 });
 ```
 
+### 7.4 Splicing an Array
+
+The splice method lets us perform complicated surgery on an array.  It can delete some elements and replace them with other elements in one step.
+
+The first argument to splice is an index in the array. The second argument is the number of elements to remove.  The elements are removed from the given index on.  The removed elements are also returned by the method.  Any additional arguments get inserted into the array at that point:
+
+```javascript
+var colors = [ 'red', 'white', 'blue' ];
+colors.splice(1, 1, 'green', 'yellow');
+// start at index 1, remove 1 element and return it; insert ‘green’ and ‘yellow’.
+["white"]
+```
+
+### 7.5 The Array as a Stack
+
+#### The push(), pop(), shift() and unshift() methods allow us to use an array as a first in last out stack.
+
+##### The push() method adds the given elements to the end of the array and returns the new length of the array.
+
+```javascript
+var colors = [ 'red', 'white', 'blue' ];
+colors.push('green', 'yellow');
+["red", "white", "blue", "green", "yellow"]
+```
+
+##### The pop() method removes the last element from an array and returns that element.
+
+```javascript
+colors.pop();
+colors  // the original array is mutated
+["red", "white", "blue", "green"]
+```
+
+---
+**The unshift() and shift() methods are similar to push() and pop() but they operate on the beginning of the array instead of at its end.  As a result, they are usually slower than push() and pop().**
+
+##### The unshift() method inserts one or more elements to the beginning of an array and returns the new length of the array.
+
+```javascript
+var colors = ['red', 'white', 'blue'];
+colors.unshift('green', 'yellow');
+colors
+["green", "yellow", "red", "white", "blue"]
+```
+
+##### The shift() method removes the first element from an array and returns that element.
+
+```javascript
+colors.shift();
+"green"
+```
 
