@@ -159,9 +159,129 @@ document.addEventListener('DOMContentLoaded', function () { console.log ('DOM is
 ### 11.3 Changing Styles with JavaScript
 ### 11.4 Hide and Show
 ### 11.5 Transition Example
-### 11.6 Animation Example
+
+#### We can add a transition effect when changing from one style to another.  We specify the transition for the class we are transitioning into.  We also specify each CSS property we want to add an effect to and the duration of the transition.
+
+```html
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset = "utf-8">
+   <title>JavaScript for Programmers</title>
+   <link rel = "stylesheet" type = "text/ css" href = "transitions.css" media = "all">
+ </head>
+ <body>
+   <h2>Transition Demo</h2>
+   <p>We create the zooming transition in CSS and trigger it from JavaScript.</p>
+   <p><input id = "mybutton" type="button" value="Press Here"></p>
+   <img id="tree" src="tree.png" alt="tree" class = "small">
+   <script defer src="../scripts/tree.js"></script>
+ </body>
+</html>
+```
+
+```css
+body {
+
+      background-color: #c0e4fe;
+
+}
+
+.small {
+
+      width: 100px;
+
+      height: 100px;
+
+      transition: height 5s, width 5s;   /* transition on height&width, duration 5 seconds */
+
+      -webkit-transition: height 5s, width 5s; /* Safari */
+
+}
+
+.large {
+
+      width: 300px;
+
+      height: 300px;
+
+      transition: height 5s, width 5s;   /* transition on height&width, duration 5 seconds */
+
+      -webkit-transition: height 5s, width 5s; /* Safari */
+
+}
+```
 
 ```javascript
+function toggle(event) {
+ if (document.getElementById('tree').className === 'small'){
+     document.getElementById('tree').className = 'large';
+ }else {
+     document.getElementById('tree').className = 'small';
+ }
+};
+document.getElementById('mybutton').addEventListener('click', toggle, false);
+```
+
+### 11.6 Animation Example
+
+```css
+body {
+  background-color:#98ff70;
+}
+.move{
+  animation: moving 8s infinite alternate;
+  -webkit-animation: moving 8s infinite alternate;/* Chrome and Safari */
+}
+@keyframes moving {
+  from {
+  }
+  to {
+   transform: translateX(800px) rotate(360deg);
+  }
+}
+@-webkit-keyframes moving {
+  from {
+  }
+  to {
+   transform: translateX(800px) rotate(360deg);
+  }
+}
+```
+
+```javascript
+function move(event) {
+    // change the className to 'move' in order to move the ball
+    document.getElementById('ball').className = 'move';
+};
+
+function stop(event) {
+    // change the className to '' so that it is no longer 'move'
+    document.getElementById('ball').className = 'stop';
+};
+
+document.getElementById('gobutton').addEventListener('click', move, false);
+document.getElementById('stopbutton').addEventListener('click', stop, false);
+```
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+                  <meta charset = "utf-8">
+                  <title>JavaScript for Programmers</title>
+                  <link rel = "stylesheet" type = "text/css" href = "animate.css" media = "all">
+  </head>
+  <body>
+                  <h2>Animation Demo</h2>
+                  <p>We create the animation in CSS and trigger it from JavaScript.</p>
+                  <input id = "gobutton" type="button" value="GO">
+                  <input id = "stopbutton" type="button" value="STOP">
+                  <p>Click on the GO button to move the ball.</p>
+                  <img id="ball" src="ball.png" alt="ball">
+                  <script defer src="../scripts/animate.js"></script>
+  </body>
+</html>
 ```
 
 
