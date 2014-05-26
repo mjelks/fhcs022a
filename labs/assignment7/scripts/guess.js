@@ -20,7 +20,8 @@ var game = {
         'propagation',
         'listener',
         'transition',
-        'animation'
+        'animation',
+        'MiChAel'
     ]
 };
 
@@ -37,14 +38,14 @@ game.check = function (letter) {
         var i = -1;
         var posArray = [];
         while (pos != -1) {
-            pos = this.answer.indexOf(letter, i + 1);
+            pos = this.answer.toLowerCase().indexOf(letter.toLowerCase(), i + 1);
             i = pos;
             if (pos != -1) {
                 posArray.push(pos);
             }
         }
         $.each(posArray, function( index, position ) {
-            var myString = game.display.substring(0, position) + letter + game.display.substring(position + 1);
+            var myString = game.display.substring(0, position) + letter.toLowerCase() + game.display.substring(position + 1);
             game.display = myString;
         });
     }
