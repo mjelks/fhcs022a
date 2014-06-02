@@ -155,12 +155,20 @@ document.addEventListener('DOMContentLoaded', function () { console.log ('DOM is
 ## Scripting Style
 
 ### 11.1 Separation of Layers
+
 ### 11.2 Cascading Style Sheets
+
 ### 11.3 Changing Styles with JavaScript
+
 ### 11.4 Hide and Show
+
 ### 11.5 Transition Example
 
 #### We can add a transition effect when changing from one style to another.  We specify the transition for the class we are transitioning into.  We also specify each CSS property we want to add an effect to and the duration of the transition.
+
+- We specify the transition for the class we are transitioning into.  
+- We also specify each CSS property we want to add an effect to and the duration of the transition.
+>>>>>>> 53698147cd6a802880f62bf2dbee9f22ef7ba2a9
 
 ```html
 <!DOCTYPE html>
