@@ -284,6 +284,8 @@ document.getElementById("start").addEventListener("click", startWorker, false);
 
 - startWorker() starts by instantiating a new worker object that will execute to code found in the script compute.js.
 
+- **postMessage(messageName)**
+
 - **The main script and the worker script can now communicate via messages**
 
 ### 18.8. Web Sockets
