@@ -135,6 +135,21 @@ document.getElementById("second").addEventListener("input", controller.update, f
 
 ### 20.1. 3-Tier Architecture
 
+#### Web applications on the server side are usually structured in three tiers. 
+
+1. Presentation Tier
+    - Web Server
+2. Logic Tier
+    - Middleware
+    - Application
+3. Persistence Tier
+    - Database
+    
+- The presentation tier usually consists of an HTTP server which listens on an HTTP port and accepts requests from the outside world.
+- The HTTP server forwards requests to the **logic (or application) tier**.  The logic tier contains our actual application code
+- The application server handles the details of HTTP requests for our logic tier and allows us to **define a high level routing to be associated with each request**
+- The **Persistence tier** is usually implemented using a database management system such as MySQL
+
 ### 20.2. The Web Stack
 
 ### 20.3. Scalability
